@@ -16,7 +16,7 @@ function SafeHouseItemsList:render()
 end
 
 function SafeHouseItemsList:create()
-    local titleHeight = getTextManager():MeasureStringY(UIFont.Large, "Safe House Items") + 10
+    local titleHeight = getTextManager():MeasureStringY(UIFont.Large, "Safe House Items")
 
     self.itemsList = ISScrollingListBox:new(10, titleHeight + 20, self:getWidth() - 20, self:getHeight() - titleHeight - 30)
     self.itemsList:initialise();
