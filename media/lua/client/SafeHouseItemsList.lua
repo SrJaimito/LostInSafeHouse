@@ -12,10 +12,13 @@ function SafeHouseItemsList:prerender()
 end
 
 function SafeHouseItemsList:render()
+    self:drawText("Safe House Items", 10, 10, 1, 1, 1, 1, UIFont.Large)
 end
 
 function SafeHouseItemsList:create()
-    self.itemsList = ISScrollingListBox:new(10, 10, self:getWidth() - 20, self:getHeight() - 20)
+    local titleHeight = getTextManager():MeasureStringY(UIFont.Large, "Safe House Items") + 10
+
+    self.itemsList = ISScrollingListBox:new(10, titleHeight + 20, self:getWidth() - 20, self:getHeight() - titleHeight - 30)
     self.itemsList:initialise();
     self.itemsList:instantiate();
 
