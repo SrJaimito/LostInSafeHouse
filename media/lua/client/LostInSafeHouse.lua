@@ -12,7 +12,7 @@ local function LISH_OnKeyPressed(keycode)
             local playerSafeHouse = SafeHouse.getSafeHouse(playerLocation)
 
             -- Are you in your safe house?
-            if playerSafeHouse and (not SafeHouse.isSafeHouse(playerLocation, player:getUsenrame(), true)) then
+            if playerSafeHouse and (not SafeHouse.isSafeHouse(playerLocation, player:getUsername(), true)) then
                 local core = getCore()
                 local screenWidth = core:getScreenWidth()
                 local screenHeight = core:getScreenHeight()
