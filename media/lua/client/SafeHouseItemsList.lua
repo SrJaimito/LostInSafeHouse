@@ -16,15 +16,17 @@ function SafeHouseItemsList:render()
 end
 
 function SafeHouseItemsList:create()
-    local titleHeight = getTextManager():MeasureStringY(UIFont.Large, "Safe House Items")
+    local textManager = getTextManager()
+
+    local titleHeight = textManager:MeasureStringY(UIFont.Large, "Safe House Items")
 
     self.itemsList = ISScrollingListBox:new(10, titleHeight + 20, self:getWidth() - 20, self:getHeight() - titleHeight - 30)
     self.itemsList:initialise();
     self.itemsList:instantiate();
 
-    self.itemsList.itemheight = 30;
+    self.itemsList.itemheight = textManager:getFontHeight(UIFont.Medium) * 1.75
     self.itemsList.joypadParent = self;
-    self.itemsList.font = UIFont.Small;
+    self.itemsList.font = UIFont.Medium;
     self.itemsList.drawBorder = true;
 
     for i = 1, 50 do
