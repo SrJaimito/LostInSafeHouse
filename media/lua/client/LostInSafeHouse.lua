@@ -7,7 +7,16 @@ local function LISH_OnKeyPressed(keycode)
     -- Check if user pressed hyphen key
     if keycode == 53 then
         if not listIsShowing then
-            safeHouseItemsList = SafeHouseItemsList:new(300, 300, 500, 500);
+            local core = getCore()
+            local screenWidth = core:getScreenWidth()
+            local screenHeight = core:getScreenHeight()
+
+            local width = 400
+            local height = screenHeight / 2
+            local x = (screenWidth - width) / 2
+            local y = (screenHeight - height) / 2
+
+            safeHouseItemsList = SafeHouseItemsList:new(x, y, width, height);
             safeHouseItemsList:initialise();
             safeHouseItemsList:addToUIManager();
         else
